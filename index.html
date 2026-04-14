@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaung</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #111;
+    --gray: #999;
+    --light: #f5f5f3;
+    --white: #fdfdfc;
+  }
+
+  body {
+    background: var(--white);
+    color: var(--black);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .wrap {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  nav { padding: 48px 0 0; }
+
+  nav .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-name { font-size: 14px; font-weight: 400; letter-spacing: 0.04em; }
+
+  .nav-links { display: flex; gap: 24px; list-style: none; }
+
+  .nav-links a { font-size: 13px; color: var(--gray); transition: color 0.15s; }
+  .nav-links a:hover { color: var(--black); }
+
+  .hero { padding: 80px 0 72px; }
+
+  .hero-photo {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--light);
+    margin-bottom: 32px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--gray);
+  }
+
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+  .hero h1 { font-size: 22px; font-weight: 400; line-height: 1.5; margin-bottom: 16px; }
+
+  .hero p { font-size: 15px; color: var(--gray); line-height: 1.7; max-width: 400px; }
+
+  .hero-socials { display: flex; gap: 20px; margin-top: 32px; }
+
+  .hero-socials a { font-size: 13px; color: var(--gray); transition: color 0.15s; }
+  .hero-socials a:hover { color: var(--black); }
+
+  hr { border: none; border-top: 1px solid #ebebeb; }
+
+  .companies { padding: 56px 0; }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 32px;
+  }
+
+  .company-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid #ebebeb;
+    transition: opacity 0.15s;
+    cursor: pointer;
+  }
+
+  .company-item:first-of-type { border-top: 1px solid #ebebeb; }
+  .company-item:hover { opacity: 0.5; }
+
+  .company-left { display: flex; align-items: baseline; gap: 12px; }
+
+  .company-name { font-size: 15px; font-weight: 400; }
+
+  .company-desc { font-size: 13px; color: var(--gray); }
+
+  .company-arrow { font-size: 13px; color: var(--gray); }
+
+  .building-dot {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--black);
+    margin-left: 5px;
+    vertical-align: middle;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.15; }
+  }
+
+  .signup { padding: 56px 0 80px; }
+
+  .signup p { font-size: 15px; color: var(--gray); margin-bottom: 24px; line-height: 1.7; }
+
+  .signup-row { display: flex; gap: 8px; }
+
+  .signup-row input {
+    flex: 1;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--black);
+    background: var(--white);
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  .signup-row input:focus { border-color: var(--black); }
+  .signup-row input::placeholder { color: #bbb; }
+
+  .signup-row button {
+    background: var(--black);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: opacity 0.15s;
+    white-space: nowrap;
+  }
+
+  .signup-row button:hover { opacity: 0.7; }
+
+  footer { padding: 32px 0; border-top: 1px solid #ebebeb; }
+
+  footer .wrap { display: flex; justify-content: space-between; }
+
+  footer p { font-size: 12px; color: #ccc; }
+
+  @media (max-width: 480px) {
+    .signup-row { flex-direction: column; }
+    .hero h1 { font-size: 18px; }
+    .hero-socials { flex-wrap: wrap; gap: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="nav-name">Kaung</span>
+    <ul class="nav-links">
+      <li><a href="#companies">Work</a></li>
+      <li><a href="#signup">Newsletter</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-photo">
+        <!-- Replace with: <img src="your-photo.jpg" alt="Kaung"> -->
+        K
+      </div>
+      <h1>I build brands,<br>with cool people.</h1>
+      <p>Entrepreneur based in Bangkok. Building across sport, community, and athlete analytics.</p>
+      <div class="hero-socials">
+        <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+        <a href="https://x.com/" target="_blank">X</a>
+        <a href="https://www.youtube.com/" target="_blank">YouTube</a>
+        <a href="https://linktr.ee/koung.mm.01" target="_blank">Links</a>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <section class="companies" id="companies">
+    <div class="wrap">
+      <p class="section-label">Companies</p>
+
+      <a class="company-item" href="https://linktr.ee/koung.mm.01" target="_blank">
+        <div class="company-left">
+          <span class="company-name">Blaze Empire</span>
+          <span class="company-desc">Brand building</span>
+        </div>
+        <span class="company-arrow">↗</span>
+      </a>
+
+      <a class="company-item" href="https://linktr.ee/koung.mm.01" target="_blank">
+        <div class="company-left">
+          <span class="company-name">Blaze Guild</span>
+          <span class="company-desc">Community</span>
+        </div>
+        <span class="company-arrow">↗</span>
+      </a>
+
+      <a class="company-item" href="https://linktr.ee/koung.mm.01" target="_blank">
+        <div class="company-left">
+          <span class="company-name">Infinity Sport</span>
+          <span class="company-desc">Athletics</span>
+        </div>
+        <span class="company-arrow">↗</span>
+      </a>
+
+      <a class="company-item" href="#signup">
+        <div class="company-left">
+          <span class="company-name">BASE<span class="building-dot"></span></span>
+          <span class="company-desc">Athlete analytics</span>
+        </div>
+        <span class="company-arrow">Building</span>
+      </a>
+
+    </div>
+  </section>
+
+  <hr>
+
+  <section class="signup" id="signup">
+    <div class="wrap">
+      <p class="section-label">Newsletter</p>
+      <p>Thoughts on brand building, BASE, and what I'm figuring out. No fluff.</p>
+      <div class="signup-row">
+        <input type="email" placeholder="your@email.com">
+        <button onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLScrGOEczhva6ceZKukF2DivsHNbPIsp-1OKFZYtxuWkkLNDog/viewform','_blank')">Subscribe</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Kaung</p>
+    <p>Bangkok</p>
+  </div>
+</footer>
+
+</body>
+</html>
