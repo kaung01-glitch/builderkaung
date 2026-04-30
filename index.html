@@ -163,7 +163,7 @@
   <section class="video-section">
     <div class="wrap">
       <a class="video-link" href="https://youtu.be/hROsIT76gE0" target="_blank">
-        <img src="https://img.youtube.com/vi/hROsIT76gE0/maxresdefault.jpg" alt="Latest video" onerror="this.style.display='none'">
+        <img src="https://img.youtube.com/vi/hROsIT76gE0/hqdefault.jpg" alt="Latest video" onerror="this.style.display='none'">
         <div class="play-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
         </div>
@@ -174,17 +174,18 @@
   <section class="signup" id="signup">
     <div class="wrap">
       <h2>You're one email sign-up away<br>from tapping into my brain.</h2>
-      <div class="signup-fields">
+      <form action="https://formspree.io/f/mbdwrwow" method="POST" class="signup-fields" id="signup-form">
         <div>
           <label>Name</label>
-          <input type="text" placeholder="Kaung">
+          <input type="text" name="name" placeholder="Kaung" required>
         </div>
         <div>
           <label>Email</label>
-          <input type="email" placeholder="kaung@email.com">
+          <input type="email" name="email" placeholder="kaung@email.com" required>
         </div>
-      </div>
-      <button class="signup-btn-full" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLScrGOEczhva6ceZKukF2DivsHNbPIsp-1OKFZYtxuWkkLNDog/viewform','_blank')">Sign up</button>
+      </form>
+      <button type="submit" form="signup-form" class="signup-btn-full">Sign up</button>
+      <p id="success-msg" style="display:none; color:#f0ede8; margin-top:16px; text-align:center;">You're in! 🔥</p>
     </div>
   </section>
 </main>
